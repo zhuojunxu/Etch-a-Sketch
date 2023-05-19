@@ -1,0 +1,15 @@
+.grids {
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gridRow {
+    display: flex;
+    flex: 1;
+}
+.gridColumn {
+    border: 1px solid blue;
+    flex: 1;
+}
