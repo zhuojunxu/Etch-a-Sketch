@@ -1,7 +1,7 @@
 const grids = document.querySelector('.grids');
 let dimension = document.getElementById("intro");
 let submission = document.getElementById("confirm");
-let eraser = document.getElementById("eraser");
+//let eraser = document.getElementById("eraser");
 let clear = document.getElementById("clear");
 
 //Initial By Default: 16*16. 
@@ -31,10 +31,10 @@ function drawGrid(grids, dimension3) {
 }
 
 clear.addEventListener("click", (clear) => clearGrid());
-eraser.addEventListener("click", (eraser)=> {
+//eraser.addEventListener("click", (eraser)=> {
 
-   eraseGrid();
-});
+   //eraseGrid();
+//});
 console.log(dimension.value)
 
 
