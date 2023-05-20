@@ -5,17 +5,16 @@ let submission = document.getElementById("confirm");
 let clear = document.getElementById("clear");
 
 //Initial By Default: 16*16. 
-drawGrid(16);
-//clearButton.addEventListener("click", clearGrid);
+if (dimension.value = "NaN") dimension.value=16;
+drawGrid(grids, dimension.value);
+submission.addEventListener("click", (submission) => resizeGrid(grids, dimension.value));
 
 function getDimension() {
     return document.getElementById("dim").innerHTML = dimension.value + '*' + dimension.value;
 }
 
 
-function drawGrid(dimension3) {
-
-
+function drawGrid(grids, dimension3) {
     for (let i = 0; i < dimension3; i++) {
         let row = document.createElement('div');
         row.classList.add('gridRow');
@@ -29,10 +28,8 @@ function drawGrid(dimension3) {
         }
     }
     
-    
 }
 
-submission.addEventListener("click", (submission) => drawGrid(dimension.value));
 clear.addEventListener("click", (clear) => clearGrid());
 console.log(dimension.value)
 
@@ -56,7 +53,16 @@ function getColor(event) {
 function clearGrid() {
     columns = document.getElementsByClassName('gridColumn');
     for (let i = 0; i < columns.length; i++) {
-        columns[i].style.backgroundColor = "white";
+        columns[i].style.backgroundColor = "";
     }
+}
+
+function resizeGrid(grids2, dimension3) {
+    clearGrid();
+    grids3 = document.querySelector('.grids');
+    while (grids3.firstChild) {
+        grids3.removeChild(grids3.firstChild);
+    }
+    drawGrid(grids3, dimension3);
 }
 
