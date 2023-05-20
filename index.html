@@ -11,14 +11,14 @@
 
     <h1>Etch-a-sketch Project</h1>
 
-    <input type="text" placeholder="Please type the dimension: " id="intro"> 
-    <input type="submit" id="res" value="Submit">
-
+    <input type="range" id="intro" oninput=getDimension() min="2" max="99" value="16"> 
+    <span id="dim"></span>
+    <button id="confirm">Submit</button>
+    <button id="clear">Clear</button>
     <div class="grids"> 
 
     </div>
 
-    <button id="mode">black</button>
     <script src="etch-a-sketch.js"></script>
 </body>
 </html>
