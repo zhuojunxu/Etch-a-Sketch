@@ -1,7 +1,7 @@
 const grids = document.querySelector('.grids');
 let dimension = document.getElementById("intro");
 let submission = document.getElementById("confirm");
-
+let eraser = document.getElementById("eraser");
 let clear = document.getElementById("clear");
 
 //Initial By Default: 16*16. 
@@ -31,23 +31,28 @@ function drawGrid(grids, dimension3) {
 }
 
 clear.addEventListener("click", (clear) => clearGrid());
+eraser.addEventListener("click", (eraser)=> {
+
+   eraseGrid();
+});
 console.log(dimension.value)
 
 
 
-function eraser(event) {
-
-    let square = event.target.style;
-
-    return square.backgroundColor = "white";
-    
-    
+function eraseGrid() {
+    grids.addEventListener('mouseover', getWhiteColor);
 }
 
 
 function getColor(event) {
     let square = event.target.style;
-    return square.backgroundColor = "black";
+    const color = document.getElementById("color-picker").value;
+    return square.backgroundColor = color;
+}
+
+function getWhiteColor(event) {
+    let square = event.target.style;
+    return square.backgroundColor = "white";
 }
 
 function clearGrid() {
