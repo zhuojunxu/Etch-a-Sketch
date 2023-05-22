@@ -3,15 +3,11 @@ let dimension = document.getElementById("intro");
 let submission = document.getElementById("confirm");
 let eraser = document.getElementById("eraser");
 let colorMode = document.getElementById("colorMode");
+let rainbowMode = document.getElementById("rainbowMode");
 let clear = document.getElementById("clear");
 
 let colorButtons = document.getElementsByClassName('modes');
 let eraserStatus = false;
-
-
-//colorMode.classList.add('color-active');
-//eraser.classList.add('eraser-active');
-
 
 if (dimension.value = "NaN") {
     dimension.value=16;
@@ -20,22 +16,10 @@ drawGrid(grids, dimension.value);
 submission.addEventListener("click", (submission) => resizeGrid(grids, dimension.value));
 
 function getDimension() {
-    return document.getElementById("dim").innerHTML = dimension.value + '*' + dimension.value;
+    return document.getElementById("dim").innerHTML = "Dimension: " +  dimension.value + '*' + dimension.value;
 }
 
 colorMode.addEventListener("click", colorGrid);
-// Code reserve to get either the color or eraser.
-/*function getColorState() {
-    if (colorMode) {
-        eraser.classList.remove('eraser-active');
-        colorMode.classList.add('color-active');
-        colorGrid();
-    } else if (eraser) {
-        colorMode.classList.remove('color-active');
-        eraser.classList.add('eraser-active');
-        eraseGrid();
-    }
-}*/
 
 
 function drawGrid(grids, dimension3) {
@@ -56,22 +40,6 @@ function drawGrid(grids, dimension3) {
 
 clear.addEventListener("click", (clear) => clearGrid());
 
-/*//if(colorMode) {
-    colorMode.addEventListener("click", (colorMode)=> {
-        eraser.classList.remove('eraser-active');
-        //colorMode.classList.add('color-active');
-        colorMode.class
-        colorGrid();
-     })
-//} else if (eraser) {
-    eraser.addEventListener("click", (eraser)=> {
-        colorMode.classList.remove('color-active');
-        eraser.classList.add('eraser-active');
-        eraseGrid();
-     });
-//}*/
-
-
 
 function colorGrid() {
     eraserStatus = false;
@@ -85,14 +53,30 @@ function eraseGrid() {
     grids.removeEventListener('mouseover', getColor);
 }
 
+function rainbowGrid() {
+    eraserStatus = true;
+    grids.addEventListener('mouseover', getRainbowColor);
+    grids.removeEventListener('mouseover', getColor);
+}
+
 
 function getColor(event) {
-    console.log("Trying");
     let square = event.target.style;
     let color = document.getElementById("color-picker").value;
-    console.log(color);
     return square.backgroundColor = color;
 }
+
+
+/*function getRainbowolor(event) {
+    let square = event.target.style;
+    let color = document.getElementById("color-picker").value;
+    let red = color.substring(1, 3);
+    let green = color.substring(3, 5);
+    let blue = color.substring(5, 7);
+    console.log(red);
+    return square.backgroundColor = color;
+}*/
+
 
 function getWhiteColor(event) {
     let square = event.target.style;
@@ -116,3 +100,4 @@ function resizeGrid(grids2, dimension3) {
 }
 
 eraser.addEventListener("click", eraseGrid);
+//rainbowMode.addEventListener("click", rainbowGrid);

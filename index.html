@@ -12,7 +12,7 @@
     <header>Etch-a-sketch Project</header>
 
     <input type="range" id="intro" oninput=getDimension() min="2" max="99" value="16"> 
-    <span id="dim">16*16</span>
+    <span id="dim">Dimension: 16*16</span>
 
     <div class="Function">
       <button id="confirm">Submit</button>
@@ -22,8 +22,11 @@
     <div class="game">
     <div class="modes">
       <input name="coloring" id="color-picker" type="color">
-      <button id="eraser">Eraser Mode</button>
-      <button id="colorMode">Color Mode</button>
+      <div class="statusMode">
+        <button id="eraser">Eraser Mode</button>
+        <button id="colorMode">Color Mode</button>
+        <!--button id="rainbowMode">Rainbow Mode</button-->
+      </div>
     </div>
     <div class="grids"> 
 
