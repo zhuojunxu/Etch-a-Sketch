@@ -1,6 +1,6 @@
 # Etch-a-Sketch
 Below is the screenshot of the game.
-![](sketch.jpeg)
+![](/image/sketch.jpeg)
 
 How to play the game?
 1. By Default, the game will be in black mode. Please click the black square to change the color.
