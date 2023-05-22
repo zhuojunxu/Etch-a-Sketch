@@ -60,7 +60,8 @@ footer {
 }
 
 #eraser,
-#colorMode
+#colorMode,
+#rainbowMode
 {
     font-size: 30px;
     padding: 10px;
