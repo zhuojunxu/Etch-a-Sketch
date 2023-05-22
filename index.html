@@ -9,24 +9,28 @@
 </head>
 <body>
 
-    <h1>Etch-a-sketch Project</h1>
+    <header>Etch-a-sketch Project</header>
 
     <input type="range" id="intro" oninput=getDimension() min="2" max="99" value="16"> 
-    <span id="dim"></span>
+    <span id="dim">16*16</span>
 
     <div class="Function">
       <button id="confirm">Submit</button>
       <button id="clear">Clear</button>
     </div>
 
-    <!--div class="modes">
+    <div class="game">
+    <div class="modes">
+      <input name="coloring" id="color-picker" type="color">
       <button id="eraser">Eraser Mode</button>
       <button id="colorMode">Color Mode</button>
-    </div-->
-    <input id="color-picker" type="color">
+    </div>
     <div class="grids"> 
 
     </div>
+    </div>
+
+    <footer>Copyright 2023 - Zhuojun Xu</footer>
 
     <script src="etch-a-sketch.js"></script>
 </body>

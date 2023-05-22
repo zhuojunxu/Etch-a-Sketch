@@ -1,3 +1,8 @@
+header {
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
 body {
     display: flex;
     background-color: lightblue;
@@ -7,12 +12,30 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+footer {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.game {
+    display: flex;
+    gap: 30px;
+}
+
 .grids {
+    flex-grow: 2;
     height: 960px;
     width: 960px;
     display: flex;
     flex-direction: column;
     background-color: white;
+}
+
+.modes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .gridRow {
@@ -22,4 +45,29 @@ body {
 .gridColumn {
     border: 1px solid black;
     flex: 1;
+}
+
+#eraser,
+#colorMode
+{
+    font-size: 30px;
+    padding: 10px;
+    display: inline-block;
+}
+
+input[type='color'] {
+    width: 100px;
+    height: 100px;
+}
+
+#confirm,
+#clear {
+    margin-top: 20px;
+    font-size: 25px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+button.active {
+    border-color: yellowgreen;
 }
