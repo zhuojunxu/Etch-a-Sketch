@@ -57,7 +57,9 @@ footer {
     border-radius: 5px;
     flex-direction: column;
     gap: 10px;
+    padding: 10px;
 }
+
 
 #eraser,
 #colorMode,

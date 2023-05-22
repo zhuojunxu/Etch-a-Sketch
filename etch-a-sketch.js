@@ -13,7 +13,7 @@ if (dimension.value = "NaN") {
     dimension.value=16;
 }
 drawGrid(grids, dimension.value);
-submission.addEventListener("click", (submission) => resizeGrid(grids, dimension.value));
+submission.addEventListener("click", () => resizeGrid(grids, dimension.value));
 
 function getDimension() {
     return document.getElementById("dim").innerHTML = "Dimension: " +  dimension.value + '*' + dimension.value;
@@ -72,11 +72,9 @@ function getColor(event) {
 
 function getRainbowColor(event) {
     let square = event.target.style;
-    let color = document.getElementById("color-picker").value;
     let red = Math.random() * 256;
     let green = Math.random() * 256;
     let blue = Math.random() * 256;
-    console.log(red);
     return square.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
 
